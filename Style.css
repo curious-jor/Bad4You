@@ -1,6 +1,8 @@
+
 body {
     font-family: helvetica;
     color: blue;
+<<<<<<< HEAD
 }
 
 #question {
@@ -45,4 +47,59 @@ input {
 
 .in-modal {
     display: inline;
+=======
+    text-align: center;
+    margin: auto;
+}
+
+/*
+#question-box{
+    border-style: solid;
+    text-align: center;
+}
+
+#age-sex{
+    margin:0 auto;
+}
+
+#question-box{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#question-text{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+*/
+
+#screen{
+    display: block;
+    height: 40%;
+    border-style: solid;
+}
+#gif{
+    height: 15%;
+    border-style: solid;
+}
+#interact{
+    height: 45%;
+    overflow: auto;
+}
+#user-info{
+    display: inline;
+    width: 20%;
+    float: left;
+    border-style: solid;
+}
+#q-a{
+    display: inline;
+    width: 75%;
+    float: right;
+    border-style: solid;
+}
+#answers{
+    
+>>>>>>> b5de327673a420dcfc95c1858289edef68522d5e
 }
