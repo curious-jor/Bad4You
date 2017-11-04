@@ -19,6 +19,12 @@ var playerInfo = [];
 
 var questionIndex = 0;
 
+
+//window.onload = function(){
+//    alert("Hello");
+//    
+//}
+
 window.onload = function(){
     questionElement = document.getElementById("question");
     answerElement = document.getElementById("answers");
@@ -100,3 +106,4 @@ function getQAndA(index) {
 function getDisseaseMods(answer, index) {
     return [1.50];
 }
+

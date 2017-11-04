@@ -66,28 +66,6 @@ input {
     font-weight: bold;
 }
 
-/*
-#question-box{
-    border-style: solid;
-    text-align: center;
-}
-
-#age-sex{
-    margin:0 auto;
-}
-
-#question-box{
-    width: 50%;
-    margin: 0 auto;
-}
-
-#question-text{
-    margin: auto;
-    text-align: center;
-    width: 50%;
-}
-*/
-
 #screen{
     display: block;
     height: 40%;
@@ -113,3 +91,30 @@ input {
     float: right;
     border-style: solid;
 }
+
+#answers{
+    
+}
+/*
+#question-box{
+    border-style: solid;
+    text-align: center;
+}
+
+#age-sex{
+    margin:0 auto;
+}
+
+#question-box{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#question-text{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+*/
+
+
