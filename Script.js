@@ -18,8 +18,21 @@ var playerPusher;
 
 // Name, Sex, State
 var playerInfo = [];
+const playerImages = [
+    "static/assets/baby.gif",
+    "static/assets/child.gif",
+    "static/assets/teen.gif",
+    "static/assets/adult.gif",
+    "static/assets/adult.gif",
+    "static/assets/adult.gif",
+    "static/assets/elder.gif"
+];
 
 var questionIndex = -1;
+const maxAge = 100;
+const ageMod = 10;
+
+
 
 window.onload = function(){
     questionElement = document.getElementById("question-text");
@@ -95,6 +108,20 @@ function kill(diseaseIndex) {
     modalElement.innerHTML = mc;
 }
 
+function naturalDeath() {
+    modalTitle.innerHTML = "Dead";
+    modalElement.style.display = "block";
+    modalName.style.display = "none";
+    var mc = 
+        `<div class="modal-content" style="width: 60%">
+            Congradulations <br>
+            <p style="color: green"> You died peacefully of old age</p>
+            <br> <p style="font-size: 16px">
+            <br><input type="button" value="Again?" class="in-modal"    
+            onClick="reset()" > </div> `;
+    modalElement.innerHTML = mc;
+}
+
 function reset() {
     location.reload();
 }
@@ -113,14 +140,17 @@ function recieveAnswer(tempMods) {
         diseaseMods[i] *= tempMods[i];
         if(diseaseMods[i] > Math.random()) kill(i);
     }
+    if(questionIndex*ageMod >= maxAge) naturalDeath();
     answerLog[questionIndex] = [newAnswer.value, tempMods];
     nextQuestion();
 }
 
 function nextQuestion() {
     questionIndex++;
-    ageElement.innerHTML = questionIndex * 10;
-    playerPusher.style.paddingLeft = (questionIndex*8)+"%";
+    ageElement.innerHTML = questionIndex * ageMod;
+    playerPusher.style.paddingLeft = (questionIndex*7)+"%";
+    playerIcon.src = playerImages[questionIndex];
+    console.log(playerIcon);
     //google.script.run.withSuccessHandler(recieveQuestion)
                     //.getQandA(questionIndex);
     recieveQuestion(getQandA(questionIndex));
