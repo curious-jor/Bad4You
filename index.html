@@ -4,19 +4,24 @@
     <head>
         
         <link rel="stylesheet" href="Style.css">
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">-->
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <script src="Script.js"></script>
+        <title>Your Choices</title>
+        <meta name="description" content="A game of health and risk.">
     
     </head>
-
+    <body>
 
     
 
         
         <div class="modal" id="modal">
-            <p class="modal-content modal-title"> Welcome </p>
+            <p class="modal-content modal-title"> 
+                Welcome
+            </p>
+            <p style="font-size: 14px; line-height: 20px;" class="modal-content">
+                This is a game <br>of health and risk. <br> 
+            </p>
             <div class="modal-content"> 
                 <input type="text" class="in-modal" id="modal name"placeholder="Name">
             </div>
@@ -89,36 +94,45 @@
                 <input type="button" class="in-modal" value="Go" onClick="submitModal(this)">
             </div>
         </div>
+
         
-    
-        <body>
         <h1>Life Decisions Game</h1>
-        
+
         <div id = "screen">
         
+
         <div id = "gif">
             <img src = "static/assets/baby.gif" width ="256px" height="256px">
         
-        </div>
-    
-        </div>
-    
 
+        </div>
+    
+        <div id = "gif pusher" style="display: inline"></div>
+        <div id = "gif">
+            <img src = "static/assets/baby.gif" width ="256" height="256">
+
+        </div>
+    
+        </div>
+    
+        
     
         <div id = "interact">
             <div id = "user-info">
-                Name: <p id = "name"></p>
-                Age: <p id = "age"></p>
-                Sex: <p id= "sex"></p>
-                State: <p id= "state"></p>
+
+
+                
+                Name: <p id = "name" class="info"></p><br>
+                Age: <p id = "age" class="info"></p><br>
+                Sex: <p id= "sex" class="info"></p><br>
+                State: <p id= "state" class="info"></p><br>
                 <div id = "heart">
-            <img src = "static/assets/heart.png" width = "128" height = "128">
-            </div>
+                    <img src = "static/assets/heart.png" width = "128" height = "128">
+                </div>
             </div>
     
             <div id = "q-a">
-                q-a
-                <div id = "question-box"> Question
+                <div id = "question-box">
                     <p id="question-text">Question Text</p>
                 <div id ="answers">
                 
@@ -127,7 +141,6 @@
             </div>
     
         </div>
-        
     </body>
     
     

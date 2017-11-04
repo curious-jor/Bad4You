@@ -2,12 +2,15 @@
 body {
     font-family: 'Press Start 2P';
     height: 100%;
+
     color: #342927;
     background-color: #8ca9c7;
 }
 
 h1 {
     text-align: center;
+    margin: 0px;
+
 }
 
 #question {
@@ -20,6 +23,8 @@ h1 {
 
 input {
     display: block;
+    font-family: 'Press Start 2P';
+    height: 30px;
 }
 
 .modal {
@@ -48,6 +53,7 @@ input {
 }
 
 .modal-title {
+    padding-top: 20px;
     padding-bottom: 20px;
     border: 1px solid #888;
 }
@@ -72,14 +78,22 @@ input {
     font-weight: bold;
 }
 
+.info {
+    color: black;
+    display: inline;
+}
+
 #screen{
     display: block;
     position: relative;
     height: 55%;
-/*    border-style: solid;*/
+    border-style: solid;
+    border-radius: 2px;
+/*
     background-image: url(static/assets/city-bg.gif);
     background-size: 100%;
-    opacity: 0.65;
+    opacity: 0.45;
+*/
 }
 #heart{
     display: inline-block;
@@ -101,6 +115,7 @@ input {
     overflow: 0 auto;
 /*    box-sizing: border-box;*/
 }
+
 #user-info{
     text-align: center;
     display: inline;
@@ -108,24 +123,21 @@ input {
     height: 100%;
     float: left;
     border-style: solid;
-/*
-    border-left-width: 0;
-    border-bottom-width: 0;
-*/
     box-sizing: border-box;
     border-radius: 2px;
+
 /*    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);*/
     background-color: #e9b56b;
+
+    line-height: 30px;
+    padding-left: 10px;
+
 }
 #q-a{
     text-align: center;
     display: inline;
     float: right;
     border-style: solid;
-/*
-    border-bottom-width: 0;
-    border-right-width: 0;
-*/
     border-radius: 2px;
     height: 100%;
     width: 80%;
@@ -152,6 +164,9 @@ input {
 }
 .answer-button{
     background-color: #f6f5f4;
+    color: #342927;
+    margin: 0 auto;
 }
+
 
 

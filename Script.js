@@ -13,17 +13,13 @@ var modalElement;
 var modalName;
 var modalSelcets = [];
 var modalTitle;
+var playerIcon;
+var playerPusher;
 
 // Name, Sex, State
 var playerInfo = [];
 
-var questionIndex = 0;
-
-
-//window.onload = function(){
-//    alert("Hello");
-//    
-//}
+var questionIndex = -1;
 
 window.onload = function(){
     questionElement = document.getElementById("question-text");
@@ -33,7 +29,13 @@ window.onload = function(){
     modalSelcets = document.getElementsByClassName("modal-select");
     modalTitle = document.getElementsByClassName("modal-title")[0];
     
-    nextQuestion();
+    nameElement = document.getElementById("name");
+    ageElement = document.getElementById("age");
+    sexElement = document.getElementById("sex");
+    stateElement = document.getElementById("state");
+    
+    playerIcon = document.getElementById("gif");
+    playerPusher = document.getElementById("gif pusher");
 }
 
 function submitModal(elem) {
@@ -53,31 +55,78 @@ function submitModal(elem) {
         else modalSelcets[i].style.backgroundColor = "paleturquoise";
     }
     if(finished) modalElement.style.display = "none";
-    console.log(playerInfo);
+    
+    populateInfo();
+    nextQuestion();
 }
 
-function kill() {
+function populateInfo() {
+    nameElement.innerHTML = playerInfo[0];
+    ageElement.innerHTML = questionIndex;
+    sexElement.innerHTML = playerInfo[1];
+    stateElement.innerHTML = playerInfo[2];
+}
+
+function kill(diseaseIndex) {
     modalTitle.innerHTML = "Dead";
     modalElement.style.display = "block";
     modalName.style.display = "none";
     for(var i=0; i<modalSelcets.length; i++) {
         modalSelcets[i].style.display = "none";
     }
+    console.log(answerLog);
+    var riskFactors = [];
+    for(var i=0; i<answerLog.length; i++) {
+        if(answerLog[i][1][diseaseIndex] != 1)
+            riskFactors.push(answerLog[i][0]);
+    }
+    var mc = 
+        `<div class="modal-content" style="width: 60%"> 
+            You've got: <br><p style="color: red">`+diseases[diseaseIndex]+`</p>
+            <br> <p style="font-size: 16px">
+            The following choices lead you there: </p> <br>`;
+    
+    for(var i=0; i<riskFactors.length; i++) {
+        mc += riskFactors[i]+"<br>";
+    }
+            
+    mc += ` <br><input type="button" value="Try Again?" class="in-modal"    
+            onClick="reset()" > </div> `;
+    modalElement.innerHTML = mc;
 }
 
-function gotAnswer(ele) {
-    var tempMods = getDisseaseMods(ele.value, questionIndex);
+function reset() {
+    location.reload();
+}
+
+var newAnswer;
+function gotAnswer(ele){
+    newAnswer = ele;
+    //google.script.run.withSuccessHandler(recieveAnswer)
+    //                 .getDiseaseMods(questionIndex, ele.value);
+    recieveAnswer(getDisseaseMods(questionIndex, newAnswer.value));
+    
+}
+
+function recieveAnswer(tempMods) {
     for(var i=0; i<diseaseMods.length; i++) {
         diseaseMods[i] *= tempMods[i];
-        if(diseaseMods[i] > Math.random()) kill();
+        if(diseaseMods[i] > Math.random()) kill(i);
     }
-    answerLog[questionIndex] = [ele.value, tempMods];
+    answerLog[questionIndex] = [newAnswer.value, tempMods];
     nextQuestion();
 }
 
 function nextQuestion() {
     questionIndex++;
-    var qa = getQAndA(questionIndex);
+    ageElement.innerHTML = questionIndex * 10;
+    playerPusher.style.paddingLeft = (questionIndex*8)+"%";
+    //google.script.run.withSuccessHandler(recieveQuestion)
+                    //.getQandA(questionIndex);
+    recieveQuestion(getQandA(questionIndex));
+}
+
+function recieveQuestion(qa) {
     makeQuestion(qa[0]);
     makeAnswers(qa[1]);
 }
@@ -88,21 +137,21 @@ function makeQuestion(question) {
 
 function makeAnswers(answers) {
     var a = "";
-    
+
     for(var i=0; i<answers.length; i++) {
         a += '<input type="button" id="'+i
             +'" value="'+answers[i]
-            +'" onClick="gotAnswer(this)">';
+            +'" class="answer-button"'
+            +' onClick="gotAnswer(this)">';
     }
-    
+
     answerElement.innerHTML = a;
 }
 
-function getQAndA(index) {
+function getQandA(index) {
     return ["Question "+index, ["Answer A "+index, "Answer B "+index]];
 }
 
-function getDisseaseMods(answer, index) {
-    return [1.50];
+function getDisseaseMods(index, answer) {
+    return [1.01];
 }
-
