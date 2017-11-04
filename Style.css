@@ -1,7 +1,10 @@
 
 body {
-    font-family: helvetica;
+    font-family: 'Press Start 2P';
+    height: 100%;
     color: blue;
+    background-color: #ffceaa;
+    margin: 0px;
 }
 
 #question {
@@ -42,6 +45,7 @@ input {
 }
 
 .modal-title {
+    padding-top: 20px;
     padding-bottom: 20px;
     border: 1px solid #888;
 }
@@ -66,55 +70,74 @@ input {
     font-weight: bold;
 }
 
+.info {
+    color: black;
+    display: inline;
+}
+
 #screen{
     display: block;
-    height: 40%;
-    border-style: solid;
+    height: 20%;
+/*    border-style: solid;*/
+}
+#heart{
+
 }
 #gif{
-    height: 15%;
-    border-style: solid;
+    height: auto;
+    width: auto;
+    display: inline;
+/*    border-style: solid;*/
 }
 #interact{
+    width: 100%;
     height: 45%;
-    overflow: auto;
+    overflow: 0 auto;
+/*    box-sizing: border-box;*/
 }
+
 #user-info{
     display: inline;
     width: 20%;
+    height: 100%;
     float: left;
     border-style: solid;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    box-sizing: border-box;
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
+    line-height: 30px;
+    padding-left: 10px;
 }
 #q-a{
+    text-align: center;
     display: inline;
-    width: 75%;
     float: right;
     border-style: solid;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    height: 100%;
+    width: 80%;
+    box-sizing: border-box;
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
 }
 
 #answers{
     
 }
-/*
+
 #question-box{
-    border-style: solid;
-    text-align: center;
+   
 }
 
 #age-sex{
-    margin:0 auto;
+    
 }
 
-#question-box{
-    width: 50%;
-    margin: 0 auto;
-}
 
 #question-text{
-    margin: auto;
-    text-align: center;
-    width: 50%;
+
 }
-*/
+
 
 

@@ -26,6 +26,11 @@ window.onload = function(){
     modalName = document.getElementById("modal name");
     modalSelcets = document.getElementsByClassName("modal-select");
     modalTitle = document.getElementsByClassName("modal-title")[0];
+    
+    nameElement = document.getElementById("name");
+    ageElement = document.getElementById("age");
+    sexElement = document.getElementById("sex");
+    stateElement = document.getElementById("state");
 
     nextQuestion();
 }
@@ -47,7 +52,15 @@ function submitModal(elem) {
         else modalSelcets[i].style.backgroundColor = "paleturquoise";
     }
     if(finished) modalElement.style.display = "none";
-    console.log(playerInfo);
+    
+    populateInfo();
+}
+
+function populateInfo() {
+    nameElement.innerHTML = playerInfo[0];
+    ageElement.innerHTML = questionIndex;
+    sexElement.innerHTML = playerInfo[1];
+    stateElement.innerHTML = playerInfo[2];
 }
 
 function kill(diseaseIndex) {
@@ -96,6 +109,7 @@ function recieveAnswer(tempMods) {
 
 function nextQuestion() {
     questionIndex++;
+    ageElement.innerHTML = questionIndex * 10;
     //google.script.run.withSuccessHandler(recieveQuestion)
                     //.getQandA(questionIndex);
     recieveQuestion(getQandA(questionIndex));

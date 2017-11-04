@@ -5,6 +5,8 @@
         
         <link rel="stylesheet" href="Style.css">
         <script src="Script.js"></script>
+        <title>Your Choices</title>
+        <meta name="description" content="A game of health and risk.">
     
     </head>
     <body>
@@ -14,7 +16,12 @@
 
         
         <div class="modal" id="modal">
-            <p class="modal-content modal-title"> Welcome </p>
+            <p class="modal-content modal-title"> 
+                Welcome
+            </p>
+            <p style="font-size: 14px; line-height: 20px;" class="modal-content">
+                This is a game <br>of health and risk. <br> 
+            </p>
             <div class="modal-content"> 
                 <input type="text" class="in-modal" id="modal name"placeholder="Name">
             </div>
@@ -88,35 +95,42 @@
             </div>
         </div>
         
-    <div id = "screen">
-        Empty
-    
-    </div>
-    
-    <div id = "gif">
-        Gif
+        Life Decisions Game
+        <div id = "screen">
+            Screen
+        <div id = "heart">
+            <img src = "static/assets/heart.png">
+            </div>
         
-        
-    </div>
     
-    <div id = "interact">
-        <div id = "user-info">
-            user-info <br>
-            name: <br>
-            age: <br>
-            sex: <br>
+    
         </div>
     
-        <div id = "q-a">
-            q-a
-            <div id = "question-box"> Question
-                <p id="question-text">Question Text</p>
+        <div id = "gif">
+            <img src = "static/assets/baby.gif" width ="256px" height="256px">
+        
+        
+        </div>
+    
+        <div id = "interact">
+            <div id = "user-info">
+                Name: <p id = "name" class="info"></p><br>
+                Age: <p id = "age" class="info"></p><br>
+                Sex: <p id= "sex" class="info"></p><br>
+                State: <p id= "state" class="info"></p><br>
+            </div>
+    
+            <div id = "q-a">
+                q-a
+                <div id = "question-box"> Question
+                    <p id="question-text">Question Text</p>
                 <div id ="answers">
                 
                 </div>
+                </div>
             </div>
-        </div>
     
-    </div>
+        </div>
+    </body>
     
 </html>
