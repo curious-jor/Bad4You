@@ -1,6 +1,7 @@
 
 body {
     font-family: helvetica;
+    height: 100%;
     color: blue;
 }
 
@@ -53,52 +54,55 @@ input {
 #screen{
     display: block;
     height: 40%;
-    border-style: solid;
+/*    border-style: solid;*/
 }
 #gif{
     height: 15%;
-    border-style: solid;
+/*    border-style: solid;*/
 }
 #interact{
+    width: 100%;
     height: 45%;
-    overflow: auto;
+    overflow: 0 auto;
+/*    box-sizing: border-box;*/
 }
 #user-info{
     display: inline;
     width: 20%;
+    height: 100%;
     float: left;
     border-style: solid;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    box-sizing: border-box;
 }
 #q-a{
     display: inline;
-    width: 75%;
     float: right;
     border-style: solid;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    height: 100%;
+    width: 80%;
+    box-sizing: border-box;
 }
 
 #answers{
     
 }
-/*
+
 #question-box{
-    border-style: solid;
-    text-align: center;
+   
 }
 
 #age-sex{
-    margin:0 auto;
+    
 }
 
-#question-box{
-    width: 50%;
-    margin: 0 auto;
-}
 
 #question-text{
-    margin: auto;
-    text-align: center;
-    width: 50%;
+
 }
-*/
+
 
 
