@@ -72,6 +72,9 @@ input {
     height: 20%;
 /*    border-style: solid;*/
 }
+#heart{
+
+}
 #gif{
     height: auto;
     width: auto;
@@ -93,8 +96,10 @@ input {
     border-left-width: 0;
     border-bottom-width: 0;
     box-sizing: border-box;
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
 }
 #q-a{
+    text-align: center;
     display: inline;
     float: right;
     border-style: solid;
@@ -103,6 +108,7 @@ input {
     height: 100%;
     width: 80%;
     box-sizing: border-box;
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
 }
 
 #answers{
