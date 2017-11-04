@@ -2,7 +2,6 @@
 body {
     font-family: helvetica;
     color: blue;
-<<<<<<< HEAD
 }
 
 #question {
@@ -47,7 +46,6 @@ input {
 
 .in-modal {
     display: inline;
-=======
     text-align: center;
     margin: auto;
 }
@@ -98,8 +96,4 @@ input {
     width: 75%;
     float: right;
     border-style: solid;
-}
-#answers{
-    
->>>>>>> b5de327673a420dcfc95c1858289edef68522d5e
 }
