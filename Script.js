@@ -19,12 +19,6 @@ var playerInfo = [];
 
 var questionIndex = 0;
 
-
-//window.onload = function(){
-//    alert("Hello");
-//    
-//}
-
 window.onload = function(){
     questionElement = document.getElementById("question-text");
     answerElement = document.getElementById("answers");
@@ -32,7 +26,7 @@ window.onload = function(){
     modalName = document.getElementById("modal name");
     modalSelcets = document.getElementsByClassName("modal-select");
     modalTitle = document.getElementsByClassName("modal-title")[0];
-    
+
     nextQuestion();
 }
 
@@ -56,28 +50,58 @@ function submitModal(elem) {
     console.log(playerInfo);
 }
 
-function kill() {
+function kill(diseaseIndex) {
     modalTitle.innerHTML = "Dead";
     modalElement.style.display = "block";
     modalName.style.display = "none";
     for(var i=0; i<modalSelcets.length; i++) {
         modalSelcets[i].style.display = "none";
     }
+    console.log(answerLog);
+    var riskFactors = [];
+    for(var i=1; i<answerLog.length; i++) {
+        if(answerLog[i][1][diseaseIndex] != 1)
+            riskFactors.push(answerLog[i][0]);
+    }
+    var mc = 
+        `<div class="modal-content" style="width: 60%"> 
+            You've got: <br>`+diseases[diseaseIndex]+`
+            <br> The following choices lead you there:<br>`;
+    
+    for(var i=0; i<riskFactors.length; i++) {
+        mc += riskFactors[i]+"<br>";
+    }
+            
+    modalElement.innerHTML += "</div>";
+    modalElement.innerHTML = mc;
 }
 
-function gotAnswer(ele) {
-    var tempMods = getDisseaseMods(ele.value, questionIndex);
+var newAnswer;
+function gotAnswer(ele){
+    newAnswer = ele;
+    //google.script.run.withSuccessHandler(recieveAnswer)
+    //                 .getDiseaseMods(questionIndex, ele.value);
+    recieveAnswer(getDisseaseMods(questionIndex, newAnswer.value));
+    
+}
+
+function recieveAnswer(tempMods) {
     for(var i=0; i<diseaseMods.length; i++) {
         diseaseMods[i] *= tempMods[i];
-        if(diseaseMods[i] > Math.random()) kill();
+        if(diseaseMods[i] > Math.random()) kill(i);
     }
-    answerLog[questionIndex] = [ele.value, tempMods];
+    answerLog[questionIndex] = [newAnswer.value, tempMods];
     nextQuestion();
 }
 
 function nextQuestion() {
     questionIndex++;
-    var qa = getQAndA(questionIndex);
+    //google.script.run.withSuccessHandler(recieveQuestion)
+                    //.getQandA(questionIndex);
+    recieveQuestion(getQandA(questionIndex));
+}
+
+function recieveQuestion(qa) {
     makeQuestion(qa[0]);
     makeAnswers(qa[1]);
 }
@@ -88,21 +112,20 @@ function makeQuestion(question) {
 
 function makeAnswers(answers) {
     var a = "";
-    
+
     for(var i=0; i<answers.length; i++) {
         a += '<input type="button" id="'+i
             +'" value="'+answers[i]
             +'" onClick="gotAnswer(this)">';
     }
-    
+
     answerElement.innerHTML = a;
 }
 
-function getQAndA(index) {
+function getQandA(index) {
     return ["Question "+index, ["Answer A "+index, "Answer B "+index]];
 }
 
-function getDisseaseMods(answer, index) {
+function getDisseaseMods(index, answer) {
     return [1.50];
 }
-
