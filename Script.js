@@ -25,7 +25,12 @@ const playerImages = [
     "static/assets/adult.gif",
     "static/assets/adult.gif",
     "static/assets/adult.gif",
-    "static/assets/elder.gif"
+    "static/assets/elder.gif",
+    "static/assets/elder.gif",
+    "static/assets/elder.gif",
+    "static/assets/elder.gif",
+    "static/assets/elder.gif",
+    "static/assets/grave.gif"
 ];
 
 var questionIndex = -1;
@@ -47,7 +52,7 @@ window.onload = function(){
     sexElement = document.getElementById("sex");
     stateElement = document.getElementById("state");
     
-    playerIcon = document.getElementById("gif");
+    playerIcon = document.getElementById("player icon");
     playerPusher = document.getElementById("gif pusher");
 }
 
