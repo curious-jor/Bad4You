@@ -1,6 +1,6 @@
 
 body {
-    font-family: helvetica;
+    font-family: 'Press Start 2P';
     height: 100%;
     color: blue;
 }
@@ -69,11 +69,13 @@ input {
 
 #screen{
     display: block;
-    height: 40%;
+    height: 20%;
 /*    border-style: solid;*/
 }
 #gif{
-    height: 15%;
+    height: auto;
+    width: auto;
+    display: inline;
 /*    border-style: solid;*/
 }
 #interact{
