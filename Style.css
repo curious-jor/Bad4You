@@ -88,14 +88,18 @@ input {
 /*    box-sizing: border-box;*/
 }
 #user-info{
+    text-align: center;
     display: inline;
     width: 20%;
     height: 100%;
     float: left;
     border-style: solid;
+/*
     border-left-width: 0;
     border-bottom-width: 0;
+*/
     box-sizing: border-box;
+    border-radius: 2px;
     background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
 }
 #q-a{
@@ -103,8 +107,11 @@ input {
     display: inline;
     float: right;
     border-style: solid;
+/*
     border-bottom-width: 0;
     border-right-width: 0;
+*/
+    border-radius: 2px;
     height: 100%;
     width: 80%;
     box-sizing: border-box;
@@ -127,6 +134,8 @@ input {
 #question-text{
 
 }
-
+.answer-button{
+    
+}
 
 
