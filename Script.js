@@ -26,7 +26,7 @@ var questionIndex = 0;
 //}
 
 window.onload = function(){
-    questionElement = document.getElementById("question");
+    questionElement = document.getElementById("question-text");
     answerElement = document.getElementById("answers");
     modalElement = document.getElementById("modal");
     modalName = document.getElementById("modal name");
@@ -63,7 +63,6 @@ function kill() {
     for(var i=0; i<modalSelcets.length; i++) {
         modalSelcets[i].style.display = "none";
     }
-    modalElement.innerHTML += 'Hello';
 }
 
 function gotAnswer(ele) {
