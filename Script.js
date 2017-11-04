@@ -13,11 +13,13 @@ var modalElement;
 var modalName;
 var modalSelcets = [];
 var modalTitle;
+var playerIcon;
+var playerPusher;
 
 // Name, Sex, State
 var playerInfo = [];
 
-var questionIndex = 0;
+var questionIndex = -1;
 
 window.onload = function(){
     questionElement = document.getElementById("question-text");
@@ -31,8 +33,9 @@ window.onload = function(){
     ageElement = document.getElementById("age");
     sexElement = document.getElementById("sex");
     stateElement = document.getElementById("state");
-
-    nextQuestion();
+    
+    playerIcon = document.getElementById("gif");
+    playerPusher = document.getElementById("gif pusher");
 }
 
 function submitModal(elem) {
@@ -54,6 +57,7 @@ function submitModal(elem) {
     if(finished) modalElement.style.display = "none";
     
     populateInfo();
+    nextQuestion();
 }
 
 function populateInfo() {
@@ -72,21 +76,27 @@ function kill(diseaseIndex) {
     }
     console.log(answerLog);
     var riskFactors = [];
-    for(var i=1; i<answerLog.length; i++) {
+    for(var i=0; i<answerLog.length; i++) {
         if(answerLog[i][1][diseaseIndex] != 1)
             riskFactors.push(answerLog[i][0]);
     }
     var mc = 
         `<div class="modal-content" style="width: 60%"> 
-            You've got: <br>`+diseases[diseaseIndex]+`
-            <br> The following choices lead you there:<br>`;
+            You've got: <br><p style="color: red">`+diseases[diseaseIndex]+`</p>
+            <br> <p style="font-size: 16px">
+            The following choices lead you there: </p> <br>`;
     
     for(var i=0; i<riskFactors.length; i++) {
         mc += riskFactors[i]+"<br>";
     }
             
-    modalElement.innerHTML += "</div>";
+    mc += ` <br><input type="button" value="Try Again?" class="in-modal"    
+            onClick="reset()" > </div> `;
     modalElement.innerHTML = mc;
+}
+
+function reset() {
+    location.reload();
 }
 
 var newAnswer;
@@ -110,6 +120,7 @@ function recieveAnswer(tempMods) {
 function nextQuestion() {
     questionIndex++;
     ageElement.innerHTML = questionIndex * 10;
+    playerPusher.style.paddingLeft = (questionIndex*8)+"%";
     //google.script.run.withSuccessHandler(recieveQuestion)
                     //.getQandA(questionIndex);
     recieveQuestion(getQandA(questionIndex));
@@ -130,7 +141,8 @@ function makeAnswers(answers) {
     for(var i=0; i<answers.length; i++) {
         a += '<input type="button" id="'+i
             +'" value="'+answers[i]
-            +'" onClick="gotAnswer(this)">';
+            +'" class="answer-button"'
+            +' onClick="gotAnswer(this)">';
     }
 
     answerElement.innerHTML = a;
@@ -141,5 +153,5 @@ function getQandA(index) {
 }
 
 function getDisseaseMods(index, answer) {
-    return [1.50];
+    return [1.01];
 }

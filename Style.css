@@ -3,7 +3,7 @@ body {
     font-family: 'Press Start 2P';
     height: 100%;
     color: blue;
-    background-color: #ffceaa;
+    background-color: gray;
     margin: 0px;
 }
 
@@ -17,6 +17,8 @@ body {
 
 input {
     display: block;
+    font-family: 'Press Start 2P';
+    height: 30px;
 }
 
 .modal {
@@ -97,14 +99,18 @@ input {
 }
 
 #user-info{
+    text-align: center;
     display: inline;
     width: 20%;
     height: 100%;
     float: left;
     border-style: solid;
+/*
     border-left-width: 0;
     border-bottom-width: 0;
+*/
     box-sizing: border-box;
+    border-radius: 2px;
     background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
     line-height: 30px;
     padding-left: 10px;
@@ -114,8 +120,11 @@ input {
     display: inline;
     float: right;
     border-style: solid;
+/*
     border-bottom-width: 0;
     border-right-width: 0;
+*/
+    border-radius: 2px;
     height: 100%;
     width: 80%;
     box-sizing: border-box;
@@ -138,6 +147,8 @@ input {
 #question-text{
 
 }
-
+.answer-button{
+    color: red;
+}
 
 
