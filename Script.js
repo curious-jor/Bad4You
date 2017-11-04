@@ -64,7 +64,7 @@ function gotAnswer(ele) {
     var tempMods = getDisseaseMods(ele.value, questionIndex);
     for(var i=0; i<diseaseMods.length; i++) {
         diseaseMods[i] *= tempMods[i];
-        if(diseaseMods[i] > Math.random) kill();
+        if(diseaseMods[i] > Math.random()) kill();
     }
     answerLog[questionIndex] = [ele.value, tempMods];
     nextQuestion();
