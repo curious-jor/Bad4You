@@ -2,7 +2,12 @@
 body {
     font-family: 'Press Start 2P';
     height: 100%;
-    color: blue;
+    color: #342927;
+    background-color: #8ca9c7;
+}
+
+h1 {
+    text-align: center;
 }
 
 #question {
@@ -69,17 +74,26 @@ input {
 
 #screen{
     display: block;
-    height: 20%;
+    position: relative;
+    height: 55%;
 /*    border-style: solid;*/
+    background-image: url(static/assets/city-bg.gif);
+    background-size: 100%;
+    opacity: 0.65;
 }
 #heart{
-
+    display: inline-block;
+    height: auto;
+    width: auto;
 }
 #gif{
+    position: absolute;
+    bottom: 0;
     height: auto;
     width: auto;
     display: inline;
 /*    border-style: solid;*/
+    z-index: 1;
 }
 #interact{
     width: 100%;
@@ -100,7 +114,8 @@ input {
 */
     box-sizing: border-box;
     border-radius: 2px;
-    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
+/*    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);*/
+    background-color: #e9b56b;
 }
 #q-a{
     text-align: center;
@@ -115,7 +130,8 @@ input {
     height: 100%;
     width: 80%;
     box-sizing: border-box;
-    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);
+/*    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);*/
+    background-color: #e9b56b;
 }
 
 #answers{
@@ -135,7 +151,7 @@ input {
 
 }
 .answer-button{
-    
+    background-color: #f6f5f4;
 }
 
 
