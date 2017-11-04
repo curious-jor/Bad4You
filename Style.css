@@ -34,6 +34,8 @@ input {
     background-color: #fefefe;
     margin: auto;
     padding: 5px;
+    
+    font-size: 20px;
    
     width: 30%;
     text-align: center;
@@ -48,6 +50,20 @@ input {
     display: inline;
     text-align: center;
     margin: auto;
+    background-color: paleturquoise;
+}
+
+.modal-select {
+    height: 20px;
+    width: 130px;
+    -webkit-border-radius: 40%;
+    -moz-border-radius: 40%;
+    border-radius: 40%;
+    background-color: paleturquoise;
+    border: none;
+    outline: none;
+    color: #27292d;
+    font-weight: bold;
 }
 
 /*
