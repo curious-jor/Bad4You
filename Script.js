@@ -194,8 +194,22 @@ function makeAnswers(answers) {
     answerElement.innerHTML = a;
 }
 
-function getQandA(index) {
-    return ["Question "+index, ["Answer A "+index, "Answer B "+index]];
+function getQandA(questionId) {
+    const data = [
+        ["Do you walk at least 30 minutes each day at a moderate to vigirous pace?", ["Yes, I walk at least 30 minutes each day", "No, I do not walk atleast 30 minutes each day"]],
+        ["On average, do you drink more or less than 1 can of soda a day",["Yes, I often drink soda", "No, I rarely drink soda type drinks"]],
+        ["Fast food is a common way to get a quick, delicious meal. How often to you consume fast food per week?",["I eat fast food four or more times a week", "I eat fast food two to three times a week", "I eat fast food around one time a week", "I do not eat fast food often"]],
+        ["Cigarettes and Tobacco products are still apart of many peoples lives. How would you best describe your relationship with Cigarettes?",["I smoke more than one pack a day", "I smoke on occasion, less than one pack a week", "I dont smoke myself, but am often around it", "I dont smoke and am not often around it"]],
+        ["How many portions of fruit and vegetables to do you eat per day?(1 portion is 80g or roughly two spears of broccoli, desert bowl of salad, two slices of watermelon, 1 apple)",["I eat more than five portions of fruits and vegetables a day", "I eat 4 portions of vegetables and fruits a day", "I eat 3 portions of vegetables and fruit a day", "I eat 2 portions of vegetables and fruits a day", "I eat less than one portion of vegetables and fruits a day"]],
+        ["Around How many alcholic drinks do you have per week? ",["I have more than 15 drinks a week", "I have 1-14 drinks a week", "I have less than 1 drink a week"]],
+        ["How physically active are you? This can include things like playing sports, going to the gym, or just running around outside",["I am physically active most days of the week", "I am not very physically active"]],
+        ["What social and economic class are you in?",["Upper class", "Middle class", "Lower class"]],
+        ["What is your favorite sitcom?",["Friends", "Seinfield", "Drake and Josh", "Malcolm in the Middle"]],
+        ["Have your parents had heart disease or related illnesses? ",["1 parent over the age of 50 had heart disease", "1 parent under the age of 50 has had heart disease", "2 parents over the age of 50 has had heart disease", "2 parents have had heart disease, one over 50 one under 50", "2 parents have had heart disease, both under the age of 50", "My parents have no heart related illnesses"]]
+    ]
+    
+    return data[questionId];
+
 }
 
 function getDisseaseMods(index, answer) {
