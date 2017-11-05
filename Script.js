@@ -108,7 +108,7 @@ function kill(diseaseIndex) {
     var mc = 
         `<div class="modal-content" style="width: 60%"> 
             You've got: <br><p style="color: red">`+diseases[diseaseIndex]+`</p>
-            <br> <p style="font-size: 16px; line-height: 30px;">
+            <br> <p style="font-size: 14px; line-height: 30px;">
             The following choices lead you there:<br>`;
     
     for(var i=0; i<riskFactors.length; i++) {
@@ -153,9 +153,9 @@ function recieveAnswer(tempMods) {
         if(diseaseMods[i] > Math.random()) kill(i);
     }
     
-    var heartIndex = Math.floor(diseaseMods[0]*30);
-    if(heartIndex < heartImages.length)
-        heartIcon.src = heartImages[heartIndex];
+    var heartIndex = Math.floor(diseaseMods[1]*30);
+    if(heartIndex < heartImages.length) heartIcon.src = heartImages[heartIndex];
+    else heartIcon.src = heartImages[3];
     
     answerLog[questionIndex] = tempMods[1];
     console.log("Risks: "+diseaseMods);
