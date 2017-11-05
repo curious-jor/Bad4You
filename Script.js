@@ -1,5 +1,5 @@
 const diseases = ["Cancer", "Heart Disease"];
-var diseaseMods = [0.01, 0.02];
+var diseaseMods = [0.0001, 0.02];
 
 var answerLog = [];
 
@@ -29,7 +29,6 @@ const playerImages = [
     "static/assets/elder.gif",
     "static/assets/elder.gif",
     "static/assets/elder.gif",
-    "static/assets/elder.gif",
     "static/assets/grave.gif"
 ];
 
@@ -42,7 +41,7 @@ const heartImages = [
 ];
 
 var questionIndex = -1;
-const maxAge = 100;
+const maxAge = 90;
 const ageMod = 10;
 
 
@@ -104,7 +103,7 @@ function kill(diseaseIndex) {
     var riskFactors = [];
     for(var i=0; i<answerLog.length; i++) {
         if(answerLog[i][1][diseaseIndex] != 1)
-            riskFactors.push(answerLog[i][0]);
+            riskFactors.push(answerLog[i][diseaseIndex]);
     }
     var mc = 
         `<div class="modal-content" style="width: 60%"> 
@@ -228,7 +227,7 @@ function getDiseaseMods(questionId, answerString) {
         [3, "I smoke on occasion, less than one pack a week", [1, 2]],
         [3, "I dont smoke myself, but am often around it", [1, 1.1147]],
         [3, "I dont smoke and am not often around it", [1, 1]],
-        [4, "I eat 4 portions of vegetables and fruits a day", [1, 0.8]],
+        [4, "I eat more than five portions of fruits and vegetables a day", [1, 0.8]],
         [4, "I eat 4 portions of vegetables and fruits a day", [1, 0.84]],
         [4, "I eat 3 portions of vegetables and fruit a day", [1, 0.88]],
         [4, "I eat 2 portions of vegetables and fruits a day", [1, 0.92]],
