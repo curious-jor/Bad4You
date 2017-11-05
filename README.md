@@ -1,5 +1,12 @@
 # Bad4You
-
+# Team: Big Ballers
+# Members:
+  Jordan Chen - <a href="http://www.github.com/curious-jor"> (Frontend-Developer)</a>
+  Niel Carlson - necarlson97 (Backend Developer)
+  Alex Yuan - alexyuan2424 (Data Analyst)
+  Liam Corbett - liamcorbett (Database Designer)
+  
+  
 # Todo
 - [X] Compile Relative Risk Data
 - [X] Create page layout
