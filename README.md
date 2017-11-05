@@ -2,9 +2,12 @@
 # Team: Big Ballers
 # Members:
   Jordan Chen - <a href="http://www.github.com/curious-jor"> (Frontend-Developer)</a>
-  Niel Carlson - necarlson97 (Backend Developer)
-  Alex Yuan - alexyuan2424 (Data Analyst)
-  Liam Corbett - liamcorbett (Database Designer)
+  
+  Niel Carlson - <a href="http://www.github.com/necarlson97"> (Backend Developer)</a>
+  
+  Alex Yuan - <a href="http://www.github.com/alexyuan2424"> (Data Analyst)</a>
+  
+  Liam Corbett - <a href="http://www.github.com/liamcorbett"> (Database Designer)</a>
   
   
 # Todo
