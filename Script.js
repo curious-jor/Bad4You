@@ -1,5 +1,5 @@
 const diseases = ["Cancer", "Heart Disease"];
-var diseaseMods = [0.0001, 0.02];
+var diseaseMods = [0, 0.2];
 
 var answerLog = [];
 
@@ -101,21 +101,22 @@ function kill(diseaseIndex) {
         modalSelcets[i].style.display = "none";
     }
     var riskFactors = [];
+    console.log(answerLog);
     for(var i=0; i<answerLog.length; i++) {
-        if(answerLog[i][1][diseaseIndex] != 1)
-            riskFactors.push(answerLog[i][diseaseIndex]);
+        if(answerLog[i][2][diseaseIndex] != 1)
+            riskFactors.push(answerLog[i]);
     }
     var mc = 
         `<div class="modal-content" style="width: 60%"> 
             You've got: <br><p style="color: red">`+diseases[diseaseIndex]+`</p>
-            <br> <p style="font-size: 16px">
-            The following choices lead you there: </p> <br>`;
+            <br> <p style="font-size: 16px; line-height: 30px;">
+            The following choices lead you there:<br>`;
     
     for(var i=0; i<riskFactors.length; i++) {
         mc += riskFactors[i]+"<br>";
     }
             
-    mc += ` <br><input type="button" value="Try Again?" class="in-modal"    
+    mc += ` </p><br><input type="button" value="Try Again?" class="in-modal"    
             onClick="reset()" > </div> `;
     modalElement.innerHTML = mc;
 }
@@ -149,16 +150,20 @@ function gotAnswer(ele){
 
 function recieveAnswer(tempMods) {
     for(var i=0; i<diseaseMods.length; i++) {
-        diseaseMods[i] *= tempMods[i];
+        diseaseMods[i] *= tempMods[2][i];
         if(diseaseMods[i] > Math.random()) kill(i);
     }
+    
     var heartIndex = Math.floor(diseaseMods[0]*30);
     if(heartIndex < heartImages.length)
         heartIcon.src = heartImages[heartIndex];
     
+    answerLog[questionIndex] = tempMods[1];
+    console.log("Disease: ",diseaseMods);
+    console.log("Mods: ",tempMods);
+    console.log("Answers: ",answerLog);
     if(questionIndex*ageMod >= maxAge) naturalDeath();
-    answerLog[questionIndex] = [newAnswer.value, tempMods];
-    nextQuestion();
+    else nextQuestion();
 }
 
 function nextQuestion() {
@@ -195,7 +200,7 @@ function makeAnswers(answers) {
 
 function getQandA(questionId) {
     const data = [
-        ["Do you walk at least 30 minutes each day at a moderate to vigirous pace?", ["Yes, I walk at least 30 minutes each day", "No, I do not walk atleast 30 minutes each day"]],
+        ["Do you walk at least 30 minutes each day at a moderate to vigirous pace?", ["Yes, I walk at least 30 minutes each day", "No, I do not walk at least 30 minutes each day"]],
         ["On average, do you drink more or less than 1 can of soda a day",["Yes, I often drink soda", "No, I rarely drink soda type drinks"]],
         ["Fast food is a common way to get a quick, delicious meal. How often to you consume fast food per week?",["I eat fast food four or more times a week", "I eat fast food two to three times a week", "I eat fast food around one time a week", "I do not eat fast food often"]],
         ["Cigarettes and Tobacco products are still apart of many peoples lives. How would you best describe your relationship with Cigarettes?",["I smoke more than one pack a day", "I smoke on occasion, less than one pack a week", "I dont smoke myself, but am often around it", "I dont smoke and am not often around it"]],
@@ -243,7 +248,7 @@ function getDiseaseMods(questionId, answerString) {
         [8, "Friends", [1, 1]],
         [8, "Seinfield", [1, 1]],
         [8, "Drake and Josh", [1, 1]],
-        [8, "Malcolm in the middle", [1, 1]],
+        [8, "Malcolm in the Middle", [1, 1]],
         [9, "1 parent over the age of 50 had heart disease", [1, 1.67]],
         [9, "1 parent under the age of 50 has had heart disease", [1, 2.36]],
         [9, "2 parents over the age of 50 has had heart disease", [1, 2.9]],
@@ -256,6 +261,6 @@ function getDiseaseMods(questionId, answerString) {
         return a[0] == questionId && a[1] == answerString;
     });
     console.log("row: ",row);
-    console.log("ret: ",row[0][2]);
-    return row[0][2];
+    console.log("ret: ",row[0]);
+    return row[0];
 }
