@@ -1,13 +1,13 @@
 # Bad4You
 # Team: Big Ballers
 # Members:
-  Jordan Chen - <a href="http://www.github.com/curious-jor"> (Frontend-Developer)</a>
+  Jordan Chen - <a href="http://www.github.com/curious-jor">curious-jor</a>(Frontend-Developer)
   
-  Niel Carlson - <a href="http://www.github.com/necarlson97"> (Backend Developer)</a>
+  Niel Carlson - <a href="http://www.github.com/necarlson97">necarlson97</a>(Backend Developer)
   
-  Alex Yuan - <a href="http://www.github.com/alexyuan2424"> (Data Analyst)</a>
+  Alex Yuan - <a href="http://www.github.com/alexyuan2424">alexyuan24</a>(Data Analyst)
   
-  Liam Corbett - <a href="http://www.github.com/liamcorbett"> (Database Designer)</a>
+  Liam Corbett - <a href="http://www.github.com/liamcorbett">liamcorbett</a>(Database Designer)
   
   
 # Todo
