@@ -158,9 +158,9 @@ function recieveAnswer(tempMods) {
     else heartIcon.src = heartImages[3];
     
     answerLog[questionIndex] = tempMods[1];
-    console.log("Risks: "+diseaseMods);
+    console.log(questionIndex+" Risks: "+diseaseMods);
     if(questionIndex*ageMod >= maxAge) naturalDeath();
-    else nextQuestion();
+    nextQuestion();
 }
 
 function nextQuestion() {
@@ -170,7 +170,8 @@ function nextQuestion() {
     playerIcon.src = playerImages[questionIndex];
     //google.script.run.withSuccessHandler(recieveQuestion)
                     //.getQandA(questionIndex);
-    recieveQuestion(getQandA(questionIndex));
+    if(questionIndex*ageMod < maxAge)
+        recieveQuestion(getQandA(questionIndex));
 }
 
 function recieveQuestion(qa) {
