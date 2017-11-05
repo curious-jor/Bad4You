@@ -80,10 +80,12 @@ function submitModal(elem) {
         }
         else modalSelcets[i].style.backgroundColor = "paleturquoise";
     }
-    if(finished) modalElement.style.display = "none";
+    if(finished) {
+        modalElement.style.display = "none";
+        populateInfo();
+        nextQuestion();
+    }
     
-    populateInfo();
-    nextQuestion();
 }
 
 function populateInfo() {
