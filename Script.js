@@ -257,5 +257,6 @@ function getDiseaseMods(questionId, answerString) {
         return a[0] == questionId && a[1] == answerString;
     });
     console.log("row: ",row);
-    return row[2];
+    console.log("ret: ",row[0][2]);
+    return row[0][2];
 }
