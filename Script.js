@@ -159,8 +159,6 @@ function recieveAnswer(tempMods) {
         heartIcon.src = heartImages[heartIndex];
     
     answerLog[questionIndex] = tempMods[1];
-    console.log("Disease: ",diseaseMods);
-    console.log("Mods: ",tempMods);
     console.log("Answers: ",answerLog);
     if(questionIndex*ageMod >= maxAge) naturalDeath();
     else nextQuestion();
