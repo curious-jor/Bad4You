@@ -128,7 +128,7 @@ function naturalDeath() {
     modalName.style.display = "none";
     var mc = 
         `<div class="modal-content" style="width: 60%">
-            Congradulations <br>
+            Congratulations <br>
             <p style="color: green"> You died peacefully of old age</p>
             <br> <p style="font-size: 16px">
             <br><input type="button" value="Again?" class="in-modal"    
