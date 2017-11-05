@@ -1,5 +1,5 @@
 const diseases = ["Cancer", "Heart Disease"];
-var diseaseMods = [0, 0.2];
+var diseaseMods = [0, 0.04];
 
 var answerLog = [];
 
@@ -101,7 +101,6 @@ function kill(diseaseIndex) {
         modalSelcets[i].style.display = "none";
     }
     var riskFactors = [];
-    console.log(answerLog);
     for(var i=0; i<answerLog.length; i++) {
         if(answerLog[i][2][diseaseIndex] != 1)
             riskFactors.push(answerLog[i]);
@@ -159,7 +158,7 @@ function recieveAnswer(tempMods) {
         heartIcon.src = heartImages[heartIndex];
     
     answerLog[questionIndex] = tempMods[1];
-    console.log("Answers: ",answerLog);
+    console.log("Risks: "+diseaseMods);
     if(questionIndex*ageMod >= maxAge) naturalDeath();
     else nextQuestion();
 }
@@ -198,6 +197,7 @@ function makeAnswers(answers) {
 
 function getQandA(questionId) {
     const data = [
+        ["Have your parents had heart disease or related illnesses? ",["1 parent over the age of 50 had heart disease", "1 parent under the age of 50 has had heart disease", "2 parents over the age of 50 has had heart disease", "2 parents have had heart disease, one over 50 one under 50", "2 parents have had heart disease, both under the age of 50", "My parents have no heart related illnesses"]],
         ["Do you walk at least 30 minutes each day at a moderate to vigirous pace?", ["Yes, I walk at least 30 minutes each day", "No, I do not walk at least 30 minutes each day"]],
         ["On average, do you drink more or less than 1 can of soda a day",["Yes, I often drink soda", "No, I rarely drink soda type drinks"]],
         ["Fast food is a common way to get a quick, delicious meal. How often to you consume fast food per week?",["I eat fast food four or more times a week", "I eat fast food two to three times a week", "I eat fast food around one time a week", "I do not eat fast food often"]],
@@ -206,8 +206,7 @@ function getQandA(questionId) {
         ["Around How many alcholic drinks do you have per week? ",["I have more than 15 drinks a week", "I have 1-14 drinks a week", "I have less than 1 drink a week"]],
         ["How physically active are you? This can include things like playing sports, going to the gym, or just running around outside",["I am physically active most days of the week", "I am not very physically active"]],
         ["What social and economic class are you in?",["Upper class", "Middle class", "Lower class"]],
-        ["What is your favorite sitcom?",["Friends", "Seinfield", "Drake and Josh", "Malcolm in the Middle"]],
-        ["Have your parents had heart disease or related illnesses? ",["1 parent over the age of 50 had heart disease", "1 parent under the age of 50 has had heart disease", "2 parents over the age of 50 has had heart disease", "2 parents have had heart disease, one over 50 one under 50", "2 parents have had heart disease, both under the age of 50", "My parents have no heart related illnesses"]]
+        ["What is your favorite sitcom?",["Friends", "Seinfield", "Drake and Josh", "Malcolm in the Middle"]]        
     ]
     
     return data[questionId];
@@ -218,41 +217,41 @@ function getDiseaseMods(questionId, answerString) {
     
     console.log("Index and answer: ",questionId," : ",answerString);
     const data = [
-        [0, "Yes, I walk at least 30 minutes each day", [1, 0.7]],
-        [0, "No, I do not walk at least 30 minutes each day", [1, 1]],
-        [1, "Yes, I often drink soda", [1, 1.5]],
-        [1, "No, I rarely drink soda type drinks", [1, 1]],
-        [2, "I eat fast food four or more times a week", [1, 1.8]],
-        [2, "I eat fast food two to three times a week", [1, 1.5]],
-        [2, "I eat fast food around one time a week", [1, 1.2]],
-        [2, "I do not eat fast food often", [1, 1]],
-        [3, "I smoke more than one pack a day", [1, 4]],
-        [3, "I smoke on occasion, less than one pack a week", [1, 2]],
-        [3, "I dont smoke myself, but am often around it", [1, 1.1147]],
-        [3, "I dont smoke and am not often around it", [1, 1]],
-        [4, "I eat more than five portions of fruits and vegetables a day", [1, 0.8]],
-        [4, "I eat 4 portions of vegetables and fruits a day", [1, 0.84]],
-        [4, "I eat 3 portions of vegetables and fruit a day", [1, 0.88]],
-        [4, "I eat 2 portions of vegetables and fruits a day", [1, 0.92]],
-        [4, "I eat less than one portion of vegetables and fruits a day", [1, 1]],
-        [5, "I have more than 15 drinks a week", [1, 1.7]],
-        [5, "I have 1-14 drinks a week", [1, 0.77]],
-        [5, "I have less than 1 drink a week", [1, 1]],
-        [6, "I am physically active most days of the week", [1, 0.55]],
-        [6, "I am not very physically active", [1, 1]],
-        [7, "Upper class", [1, 1]],
-        [7, "Middle class", [1, 1]],
-        [7, "Lower class", [1, 1.5]],
-        [8, "Friends", [1, 1]],
-        [8, "Seinfield", [1, 1]],
-        [8, "Drake and Josh", [1, 1]],
-        [8, "Malcolm in the Middle", [1, 1]],
-        [9, "1 parent over the age of 50 had heart disease", [1, 1.67]],
-        [9, "1 parent under the age of 50 has had heart disease", [1, 2.36]],
-        [9, "2 parents over the age of 50 has had heart disease", [1, 2.9]],
-        [9, "2 parents have had heart disease, one over 50 one under 50", [1, 3.26]],
-        [9, "2 parents have had heart disease, both under the age of 50", [1, 6.56]],
-        [9, "My parents have no heart related illnesses", [1, 1]]
+        [0, "1 parent over the age of 50 had heart disease", [1, 1.67]],
+        [0, "1 parent under the age of 50 has had heart disease", [1, 2.36]],
+        [0, "2 parents over the age of 50 has had heart disease", [1, 2.9]],
+        [0, "2 parents have had heart disease, one over 50 one under 50", [1, 3.26]],
+        [0, "2 parents have had heart disease, both under the age of 50", [1, 6.56]],
+        [0, "My parents have no heart related illnesses", [1, 1]],
+        [1, "Yes, I walk at least 30 minutes each day", [1, 0.7]],
+        [1, "No, I do not walk at least 30 minutes each day", [1, 1]],
+        [2, "Yes, I often drink soda", [1, 1.5]],
+        [2, "No, I rarely drink soda type drinks", [1, 1]],
+        [3, "I eat fast food four or more times a week", [1, 1.8]],
+        [3, "I eat fast food two to three times a week", [1, 1.5]],
+        [3, "I eat fast food around one time a week", [1, 1.2]],
+        [3, "I do not eat fast food often", [1, 1]],
+        [4, "I smoke more than one pack a day", [1, 4]],
+        [4, "I smoke on occasion, less than one pack a week", [1, 2]],
+        [4, "I dont smoke myself, but am often around it", [1, 1.1147]],
+        [4, "I dont smoke and am not often around it", [1, 1]],
+        [5, "I eat more than five portions of fruits and vegetables a day", [1, 0.8]],
+        [5, "I eat 4 portions of vegetables and fruits a day", [1, 0.84]],
+        [5, "I eat 3 portions of vegetables and fruit a day", [1, 0.88]],
+        [5, "I eat 2 portions of vegetables and fruits a day", [1, 0.92]],
+        [5, "I eat less than one portion of vegetables and fruits a day", [1, 1]],
+        [6, "I have more than 15 drinks a week", [1, 1.7]],
+        [6, "I have 1-14 drinks a week", [1, 0.77]],
+        [6, "I have less than 1 drink a week", [1, 1]],
+        [7, "I am physically active most days of the week", [1, 0.55]],
+        [7, "I am not very physically active", [1, 1]],
+        [8, "Upper class", [1, 1]],
+        [8, "Middle class", [1, 1]],
+        [8, "Lower class", [1, 1.5]],
+        [9, "Friends", [1, 1]],
+        [9, "Seinfield", [1, 1]],
+        [9, "Drake and Josh", [1, 1]],
+        [9, "Malcolm in the Middle", [1, 1]]
     ];
     
     const row = data.filter(function (a){
