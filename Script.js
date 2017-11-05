@@ -41,7 +41,7 @@ const heartImages = [
 ];
 
 var questionIndex = -1;
-const maxAge = 90;
+const maxAge = 100;
 const ageMod = 10;
 
 
@@ -102,8 +102,8 @@ function kill(diseaseIndex) {
     }
     var riskFactors = [];
     for(var i=0; i<answerLog.length; i++) {
-        if(answerLog[i][2][diseaseIndex] != 1)
-            riskFactors.push(answerLog[i]);
+        if(answerLog[i][2][diseaseIndex] > 1)
+            riskFactors.push(answerLog[i][1]);
     }
     var mc = 
         `<div class="modal-content" style="width: 60%"> 
@@ -157,20 +157,18 @@ function recieveAnswer(tempMods) {
     if(heartIndex < heartImages.length) heartIcon.src = heartImages[heartIndex];
     else heartIcon.src = heartImages[3];
     
-    answerLog[questionIndex] = tempMods[1];
+    answerLog[questionIndex] = tempMods;
     console.log(questionIndex+" Risks: "+diseaseMods);
-    if(questionIndex*ageMod >= maxAge) naturalDeath();
     nextQuestion();
 }
 
 function nextQuestion() {
     questionIndex++;
+    if(questionIndex*ageMod >= maxAge) naturalDeath();
     ageElement.innerHTML = questionIndex * ageMod;
     playerPusher.style.paddingLeft = (questionIndex*7)+"%";
     playerIcon.src = playerImages[questionIndex];
-    //google.script.run.withSuccessHandler(recieveQuestion)
-                    //.getQandA(questionIndex);
-    if(questionIndex*ageMod < maxAge)
+    if(questionIndex*ageMod <= maxAge)
         recieveQuestion(getQandA(questionIndex));
 }
 
