@@ -25,7 +25,7 @@
 # Description
 Everyone knows candy is bad for you. But everyone also knows everything is bad for you. Cigarettes, alcohol, plastic, sitting, and even *running* are bad for you. So how do you enjoy your life knowing all of this?  
   
-Bad4You is a browser-based life simulator. To get started, give it your name, age, and the state you live in. Then answer a series of questions about your lifestyle. Do you eat your vegetables? Do you drink soda? Do you smoke? Your answers to these questions will be compared to a collection of relative risk data. Bad4You then determines your risk of heart disease for every choice you make. See your decisions played out over the course of your life and get a sense of how those decisions affect your health.
+Bad4You is a browser-based life simulator. To get started, give it your name, age, and the state you live in. Then answer a series of questions about your lifestyle. Do you eat your vegetables? Do you drink soda? Do you smoke? Your answers to these questions will be compared to a collection of public health data. Bad4You then determines your risk of heart disease for every choice you make. See your decisions played out over the course of your life and get a sense of how those decisions affect your health.
 
 Video demo <a href="https://www.youtube.com/watch?v=Kj7g5Qy73BY">here</a>.
 
