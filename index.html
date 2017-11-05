@@ -4,6 +4,7 @@
     <head>
         
         <link rel="stylesheet" href="Style.css">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <script src="Script.js"></script>
         <title>Your Choices</title>
         <meta name="description" content="A game of health and risk.">
@@ -11,10 +12,6 @@
     </head>
     <body>
 
-    
-        Life Decisions Game
-
-        
         <div class="modal" id="modal">
             <p class="modal-content modal-title"> 
                 Welcome
@@ -94,26 +91,33 @@
                 <input type="button" class="in-modal" value="Go" onClick="submitModal(this)">
             </div>
         </div>
+
         
+        <h1>Life Decisions Game</h1>
+
         <div id = "screen">
-            Screen
-        <div id = "heart">
-            <img src = "static/assets/heart.png" width = "128" height = "128">
-            </div>
-        
-        </div>
     
         <div id = "gif pusher" style="display: inline"></div>
         <div id = "gif">
             <img src = "static/assets/baby.gif" id="player-icon" width ="256" height="256">
         </div>
     
+        </div>
+    
+        
+    
         <div id = "interact">
             <div id = "user-info">
+
+
+                
                 Name: <p id = "name" class="info"></p><br>
                 Age: <p id = "age" class="info"></p><br>
                 Sex: <p id= "sex" class="info"></p><br>
                 State: <p id= "state" class="info"></p><br>
+                <div id = "heart">
+                    <img src = "static/assets/heart1.gif" id="heart-icon" width = "128" height = "128">
+                </div>
             </div>
     
             <div id = "q-a">
@@ -127,5 +131,6 @@
     
         </div>
     </body>
+    
     
 </html>

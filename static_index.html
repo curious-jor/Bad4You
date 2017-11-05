@@ -1,44 +1,139 @@
 <html>
 
-    <head>
+   <head>
         
-        <link rel="stylesheet" href="Style.css">
+       <link rel="stylesheet" href="Style.css">
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">-->
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <script src="Script.js"></script>
     
-    </head>
+   </head>
     <body>
+
     
-        Life Decisions Game
-        <div id = "screen">
-            Screen
-        <div id = "heart">
-            <img src = "static/assets/heart.png" width = "128" height = "128">
+
+        
+<!--
+        <div class="modal" id="modal">
+            <p class="modal-content modal-title"> 
+                Welcome
+            </p>
+            <p style="font-size: 14px; line-height: 20px;" class="modal-content">
+                This is a game <br>of health and risk. <br> 
+            </p>
+            <div class="modal-content"> 
+                <input type="text" class="in-modal" id="modal name"placeholder="Name">
+            </div>
+            <div class="modal-content"> 
+                <select class="modal-select">
+                    <option>Select Sex</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
             </div>
         
-    
-    
+            <div class="modal-content">
+                <select class="modal-select">
+                    <option value="AL">Select State</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <div class="modal-content"> 
+                <input type="button" class="in-modal" value="Go" onClick="submitModal(this)">
+            </div>
         </div>
-    
+-->
+
+        
+        <h1>Life Decisions Game</h1>
+
+        <div id = "screen">
+            <img src="static/assets/city-bg.gif" style ="width:100%;height:100%;opacity:0.45">
+
         <div id = "gif">
             <img src = "static/assets/baby.gif" width ="256px" height="256px">
         
-        
+
         </div>
+    
+        <div id = "gif pusher" style="display: inline"></div>
+        <div id = "gif">
+            <img src = "static/assets/baby.gif" width ="256" height="256">
+
+        </div>
+    
+        </div>
+    
+        
     
         <div id = "interact">
             <div id = "user-info">
-                Name: <p id = "name"></p>
-                Age: <p id = "age"></p>
-                Sex: <p id= "sex"></p>
-                State: <p id= "state"></p>
+
+
+                
+                Name: <p id = "name" class="info"></p><br>
+                Age: <p id = "age" class="info"></p><br>
+                Sex: <p id= "sex" class="info"></p><br>
+                State: <p id= "state" class="info"></p><br>
+                <div id = "heart">
+                    <img src = "static/assets/heart.png" width = "128" height = "128">
+                </div>
             </div>
     
             <div id = "q-a">
-                q-a
-                <div id = "question-box"> Question
+                <div id = "question-box">
                     <p id="question-text">Question Text</p>
                 <div id ="answers">
                 
@@ -47,9 +142,8 @@
             </div>
     
         </div>
-        
     </body>
     
-    
+   
 
 </html>

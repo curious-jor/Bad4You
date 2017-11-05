@@ -33,6 +33,7 @@ const playerImages = [
     "static/assets/grave.gif"
 ];
 
+var heartIcon;
 const heartImages = [
     "static/assets/heart1.gif",
     "static/assets/heart2.gif",
@@ -59,8 +60,9 @@ window.onload = function(){
     sexElement = document.getElementById("sex");
     stateElement = document.getElementById("state");
     
-    playerIcon = document.getElementById("player icon");
+    playerIcon = document.getElementById("player-icon");
     playerPusher = document.getElementById("gif pusher");
+    heartIcon = document.getElementById("heart-icon");
 }
 
 function submitModal(elem) {
@@ -99,7 +101,6 @@ function kill(diseaseIndex) {
     for(var i=0; i<modalSelcets.length; i++) {
         modalSelcets[i].style.display = "none";
     }
-    console.log(answerLog);
     var riskFactors = [];
     for(var i=0; i<answerLog.length; i++) {
         if(answerLog[i][1][diseaseIndex] != 1)
@@ -152,6 +153,10 @@ function recieveAnswer(tempMods) {
         diseaseMods[i] *= tempMods[i];
         if(diseaseMods[i] > Math.random()) kill(i);
     }
+    var heartIndex = Math.floor(diseaseMods[0]*30);
+    if(heartIndex < heartImages.length)
+        heartIcon.src = heartImages[heartIndex];
+    
     if(questionIndex*ageMod >= maxAge) naturalDeath();
     answerLog[questionIndex] = [newAnswer.value, tempMods];
     nextQuestion();
@@ -162,7 +167,6 @@ function nextQuestion() {
     ageElement.innerHTML = questionIndex * ageMod;
     playerPusher.style.paddingLeft = (questionIndex*7)+"%";
     playerIcon.src = playerImages[questionIndex];
-    console.log(playerIcon);
     //google.script.run.withSuccessHandler(recieveQuestion)
                     //.getQandA(questionIndex);
     recieveQuestion(getQandA(questionIndex));
@@ -195,5 +199,5 @@ function getQandA(index) {
 }
 
 function getDisseaseMods(index, answer) {
-    return [1.01];
+    return [1.5];
 }
