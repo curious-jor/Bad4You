@@ -33,6 +33,13 @@ const playerImages = [
     "static/assets/grave.gif"
 ];
 
+const heartImages = [
+    "static/assets/heart1.gif",
+    "static/assets/heart2.gif",
+    "static/assets/heart3.gif",
+    "static/assets/heart4.gif",
+];
+
 var questionIndex = -1;
 const maxAge = 100;
 const ageMod = 10;

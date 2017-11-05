@@ -91,6 +91,11 @@ input {
     display: inline;
 /*    border-style: solid;*/
 }
+
+#player-icon {
+    
+}
+
 #interact{
     width: 100%;
     height: 45%;
