@@ -21,4 +21,8 @@ Bad4You is a browser-based life simulator. Give it your name, age, and the state
 Clone this repository and open index.html. Enter your name, sex, and the state you live in. Then start answering questions in the bottom right. Click "Play Again" if you get to the end, or die.
 Bad4You/static/assets/StartupScreen.png
 
-![test](static/assets/StartupScreen.png)
+![](static/assets/StartupScreen.png)
+![](static/assets/midgame.png)
+![](static/assets/deathimage.png)
+![](static/assets/successfullife.png)
+
