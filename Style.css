@@ -89,10 +89,15 @@ input {
     height: 55%;
     border-style: solid;
     border-radius: 2px;
-    background-image: url(static/assets/city-bg.gif);
     background-size: 100%;
-    opacity: 0.45;
 }
+
+#screen-bg {
+    height: 100%;
+    width: 100%;
+    opacity: .45;
+}
+
 #heart{
     display: inline-block;
     height: auto;
@@ -106,6 +111,7 @@ input {
     display: inline;
 /*    border-style: solid;*/
     z-index: 1;
+    
 }
 
 #player-icon {
@@ -128,8 +134,6 @@ input {
     border-style: solid;
     box-sizing: border-box;
     border-radius: 2px;
-
-/*    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);*/
     background-color: #e9b56b;
 
     line-height: 30px;
@@ -145,7 +149,6 @@ input {
     height: 100%;
     width: 80%;
     box-sizing: border-box;
-/*    background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper_v3.png);*/
     background-color: #e9b56b;
 }
 
